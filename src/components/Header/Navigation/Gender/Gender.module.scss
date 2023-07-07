@@ -1,0 +1,36 @@
+.gender {
+  display: flex;
+}
+.item {
+  flex-basis: 50%;
+}
+
+.link {
+  display: block;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #dcdcdc;
+  transition: color 0.3s ease-in-out;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  @media (max-width: 540px) {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &:hover {
+    color: #8a8a8a;
+  }
+
+  &Active {
+    border-color: #000000;
+    pointer-events: none;
+  }
+}

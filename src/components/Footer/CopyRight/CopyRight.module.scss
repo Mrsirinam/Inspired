@@ -1,0 +1,10 @@
+.copyright {
+  grid-area: copyright;
+  align-self: end;
+  font-size: 12px;
+  line-height: 130%;
+
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
+}

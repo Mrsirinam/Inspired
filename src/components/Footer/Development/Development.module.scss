@@ -1,0 +1,23 @@
+.development {
+  grid-area: development;
+  font-size: 12px;
+  line-height: 130%;
+
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
+
+  &List {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @media (max-width: 768px) {
+      gap: 11px;
+    }
+
+    @media (max-width: 540px) {
+      gap: 4px;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.contacts {
+  grid-area: contacts;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 18px;
+  line-height: 22px;
+
+  @media (max-width: 768px) {
+    gap: 21px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  @media (max-width: 540px) {
+    gap: 8px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

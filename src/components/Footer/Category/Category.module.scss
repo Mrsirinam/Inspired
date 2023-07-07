@@ -1,0 +1,53 @@
+.category {
+  grid-area: category;
+
+  &Title {
+    margin-bottom: 24px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 540px) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &List {
+    display: flex;
+    gap: 80px;
+
+    @media (max-width: 1024px) {
+      gap: 30px;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 7px;
+    }
+  }
+
+  &Subtitle {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+      line-height: 15px;
+      margin-bottom: 0;
+    }
+  }
+
+  &Sublist {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    line-height: 17px;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
