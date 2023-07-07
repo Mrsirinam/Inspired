@@ -3,31 +3,6 @@ import sc from "../Footer.module.scss";
 import cn from "classnames";
 import { NavLink } from "react-router-dom";
 
-const list = [
-  {
-    link: "women",
-    title: "Женщины",
-    categories: [
-      { link: "bras", title: "Бюсгалтеры" },
-      { link: "panties", title: "Трусы" },
-      { link: "socks", title: "Носки" },
-      { link: "bathrobes", title: "Халаты" },
-      { link: "thermal", title: "Термобелье" },
-      { link: "pijamas", title: "Пижамы" },
-    ],
-  },
-  {
-    link: "men",
-    title: "Мужчины",
-    categories: [
-      { link: "panties", title: "Трусы" },
-      { link: "socks", title: "Носки" },
-      { link: "bathrobes", title: "Халаты" },
-      { link: "thermal", title: "Термобелье" },
-    ],
-  },
-];
-
 export const Category = ({ list }) => (
   <div className={s.category}>
     <h2 className={cn(sc.title, s.categoryTitle)}>КАТАЛОГ</h2>
