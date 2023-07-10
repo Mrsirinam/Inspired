@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import { Footer } from "../Components/Footer/Footer";
-import { Header } from "../Components/Header/Header";
-import { Main } from "../Components/Layout/Main/Main";
+import { Footer } from "../components/Footer/Footer";
+import { Header } from "../components/Header/Header";
+import { Main } from "../components/Layout/Main/Main";
 
 const list = [
   {
