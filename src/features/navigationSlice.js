@@ -17,6 +17,7 @@ const navigationSlice = createSlice({
     status: "idle",
     categories: {},
     genderList: [],
+    error: null,
   },
   reducers: {
     setActiveGender: (state, action) => {
@@ -34,8 +35,8 @@ const navigationSlice = createSlice({
         state.genderList = Object.keys(action.payload);
       })
       .addCase(fetchNavigation.rejected, (state, action) => {
-        state.status = "success";
-        state.categories = action.payload;
+        state.status = "failed";
+        state.error = action.error.message;
         state.genderList = Object.keys(action.payload);
       });
   },
