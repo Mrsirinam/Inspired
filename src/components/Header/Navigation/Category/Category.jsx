@@ -2,20 +2,21 @@ import { NavLink } from "react-router-dom";
 import s from "./Category.module.scss";
 import { useSelector } from "react-redux";
 import cn from "classnames";
-// import { createNextState } from "@reduxjs/toolkit";
 
 export const Category = ({ list }) => {
-  const { gender } = useSelector((state) => state.navigation.activeGender);
-  const categoriesList = list.find((item) => item.link === gender);
-  console.log(categoriesList, gender);
+  const { activeGender } = useSelector(
+    (state) => state.navigation.activeGender
+  );
+  const categoriesList = list.find((item) => item.link === activeGender);
+  console.log(categoriesList, activeGender);
 
   return (
     <ul className={s.category}>
-      {categoriesList?.categories.map((item) => (
+      {categoriesList?.categories?.map((item) => (
         <li key={item.link} className={s.item}>
           <NavLink
             className={({ isActive }) => cn(s.link, isActive && s.linkActive)}
-            to={`${gender}/${item.link}`}
+            to={`${activeGender}/${item.link}`}
           >
             {item.title}
           </NavLink>

@@ -32,8 +32,12 @@ const navigationSlice = createSlice({
         state.status = "success";
         state.categories = action.payload;
         state.genderList = Object.keys(action.payload);
+      })
+      .addCase(fetchNavigation.rejected, (state, action) => {
+        state.status = "success";
+        state.categories = action.payload;
+        state.genderList = Object.keys(action.payload);
       });
-    // .addCase();
   },
 });
 
