@@ -1,9 +1,9 @@
 import { Navigation } from "./Navigation/Navigation";
 import { Top } from "./Top/Top";
 
-export const Header = ({ list }) => (
+export const Header = () => (
   <header>
     <Top />
-    <Navigation list={list} />
+    <Navigation />
   </header>
 );
