@@ -10,7 +10,7 @@ export const Top = () => (
       <a className={cn(s.link, s.phone)} href="tel:+79034034031">
         +7 (903) 490 26 20
       </a>
-      <a href="/" className={s.logo} href="/">
+      <a href="/" className={s.logo}>
         <img src={logo} alt="Логотип Inspired" />
       </a>
       <div className={s.navigation}>
