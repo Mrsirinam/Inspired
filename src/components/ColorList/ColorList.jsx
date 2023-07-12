@@ -9,7 +9,7 @@ export const ColorList = ({ colors }) => {
     <ul className={s.colorList}>
       {colors.map((id, i) => {
         const color = colorList.find((color) => color.id === id); //узнаем цвет в списке colorList. Обращаемся к id color и сравниваем с id, который пришел по товару
-        return <Color key={id} color={color?.code} check={!i} />;
+        return <Color key={id} color={color?.code} check={!i} />; // check={!i} ,check будет равен true только у первого элемента
       })}
     </ul>
   );
