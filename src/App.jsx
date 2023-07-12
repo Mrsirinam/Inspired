@@ -18,12 +18,23 @@ import { fetchColors } from "./features/colorSlice";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
-      <Route index element={<Navigate to="/women" />} />
+      <Route index element={<Navigate to="/catalog/women" />} />
+      <Route path="catalog" element={<Navigate to="/catalog/women" />} />
       <Route path="catalog/:gender/:category?" element={<MainPage />} />
       <Route path="*" element={<ErrorPage />} />
     </Route>
   )
 );
+
+// const router = createBrowserRouter(
+//   createRoutesFromElements(
+//     <Route path="/" element={<Root />}>
+//       <Route index element={<Navigate to="/women" />} />
+//       <Route path="catalog/:gender/:category?" element={<MainPage />} />
+//       <Route path="*" element={<ErrorPage />} />
+//     </Route>
+//   )
+// );
 
 export const App = () => {
   const dispatch = useDispatch();

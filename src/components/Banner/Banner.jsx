@@ -8,7 +8,7 @@ export const Banner = ({ data }) =>
     <section
       className={s.banner}
       style={{
-        backgroundImage: `url(${API_URL}${data.bg.desktop})`,
+        backgroundImage: `url(${API_URL}/${data.bg.desktop})`,
       }}
     >
       <Container>
