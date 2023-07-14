@@ -1,12 +1,11 @@
 import s from "./Category.module.scss";
 import sc from "../Footer.module.scss";
 import cn from "classnames";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-export const Category = ({ list }) => {
+export const Category = () => {
   const { genderList, categories } = useSelector((state) => state.navigation);
-  console.log(genderList, categories);
 
   return (
     <div className={s.category}>

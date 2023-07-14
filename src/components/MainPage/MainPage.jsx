@@ -10,12 +10,20 @@ export const MainPage = () => {
   const dispatch = useDispatch();
   const { gender, category } = useParams();
 
-  const { activeGender, categories } = useSelector((state) => state.navigation);
+  const { activeGender, categories, genderList } = useSelector(
+    (state) => state.navigation
+  );
   const genderData = categories[activeGender];
+  const categoryData = genderData?.list.find((item) => item.slug === category);
 
   useEffect(() => {
-    dispatch(setActiveGender(gender));
-  }, [gender, dispatch]);
+    if (gender) {
+      dispatch(setActiveGender(gender));
+    } else if (genderList[0]) {
+      dispatch(setActiveGender(genderList[0]));
+      dispatch(fetchGender(genderList[0]));
+    }
+  }, [gender, genderList, dispatch]);
 
   useEffect(() => {
     if (gender && category) {
@@ -34,10 +42,9 @@ export const MainPage = () => {
 
   return (
     <>
-      <Banner data={genderData?.banner} />
-      <Goods
-        categoryData={genderData?.list.find((item) => item.slug === category)}
-      />
+      {!category && <Banner data={genderData?.banner} />}
+      {/*  Баннер отображается только при выборе главных категорий: женское, мужское, детское. И не отображается если выбрана подкатегория (халаты, трусы, носки). */}
+      <Goods categoryData={categoryData} />
     </>
   );
 };
