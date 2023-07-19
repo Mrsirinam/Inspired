@@ -1,0 +1,58 @@
+.size {
+  margin-bottom: 24px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 540px) {
+    margin-bottom: 12px;
+  }
+}
+
+.title {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #8a8a8a;
+  margin-bottom: 8px;
+
+  @media (max-width: 768px) {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+}
+
+.item {
+  cursor: pointer;
+}
+
+.input {
+  appearance: none;
+  position: absolute;
+}
+
+.input:checked + .check {
+  background-color: #000;
+  color: #fff;
+}
+
+.check {
+  display: block;
+  padding: 3px 14px;
+  border: 0.5px solid #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+}
+

@@ -13,14 +13,14 @@ export const ProductPage = () => {
   const { id } = useParams();
   const { product } = useSelector((state) => state.product);
   const [selectedColor, setSelectedColor] = useState("");
-  const [selectedZize, setSelectedSize] = useState("");
+  // const [selectedZize, setSelectedSize] = useState("");
 
   const handleColorChange = (e) => {
     setSelectedColor(e.target.value);
   };
-  const handleSizeChange = (e) => {
-    setSelectedSize(e.target.value);
-  };
+  // const handleSizeChange = (e) => {
+  //   setSelectedSize(e.target.value);
+  // };
 
   useEffect(() => {
     dispatch(fetchProduct(id)); //создаем запрос к серверу
@@ -50,7 +50,7 @@ export const ProductPage = () => {
             />
           </div>
 
-          <ProductSize size={product.size} />
+          {/* <ProductSize size={product.size} /> */}
         </form>
       </Container>
     </section>
