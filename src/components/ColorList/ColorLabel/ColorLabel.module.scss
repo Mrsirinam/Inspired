@@ -1,0 +1,41 @@
+.color {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: block;
+  margin-right: 6px;
+  cursor: pointer;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--data-color);
+    border: 0.4px solid #8a8a8a;
+  }
+}
+
+.input {
+  appearance: none;
+
+  &:checked + .colorCheck {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    border: 0.4px solid #8a8a8a;
+    border-radius: 50%;
+  }
+}
