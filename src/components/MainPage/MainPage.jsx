@@ -44,7 +44,7 @@ export const MainPage = () => {
     <>
       {!category && <Banner data={genderData?.banner} />}
       {/*  Баннер отображается только при выборе главных категорий: женское, мужское, детское. И не отображается если выбрана подкатегория (халаты, трусы, носки). */}
-      <Goods categoryData={categoryData} />
+      <Goods title={categoryData?.title} />
     </>
   );
 };
