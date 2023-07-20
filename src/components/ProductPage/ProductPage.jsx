@@ -7,13 +7,26 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { API_URL } from "../../const";
 import { ColorList } from "../ColorList/ColorList.jsx";
+import { ReactComponent as Like } from "../../assets/heart.svg";
+import { Count } from "../Count/Count";
 
 export const ProductPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const { product } = useSelector((state) => state.product);
+
+  const [count, setCount] = useState(1);
   const [selectedColor, setSelectedColor] = useState("");
   // const [selectedZize, setSelectedSize] = useState("");
+
+  const handleIncrement = () => {
+    setCount((prev) => prev + 1);
+  };
+  const handleDecrement = () => {
+    if (count > 1) {
+      setCount((prev) => --prev);
+    }
+  };
 
   const handleColorChange = (e) => {
     setSelectedColor(e.target.value);
@@ -51,6 +64,29 @@ export const ProductPage = () => {
           </div>
 
           {/* <ProductSize size={product.size} /> */}
+          <div className={s.description}>
+            <p className={cn(s.subtitle, s.descriptionTitle)}>Описание</p>
+            <p className={s.descriptionText}>{product.description}</p>
+          </div>
+
+          <div className={s.control}>
+            <Count
+              className={s.count}
+              count={count}
+              handleIncrement={handleIncrement}
+              handleDecrement={handleDecrement}
+            />
+            <button className={s.addCart} type="submit">
+              В корзину
+            </button>
+            <button
+              className={s.favorite}
+              aria-label="Добавить в избранное"
+              type="button"
+            >
+              <Like />
+            </button>
+          </div>
         </form>
       </Container>
     </section>
