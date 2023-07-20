@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { API_URL } from "../../const";
 import { ColorList } from "../ColorList/ColorList.jsx";
+import { ProductSize } from "../ProductSize/ProductSize";
 import { ReactComponent as Like } from "../../assets/heart.svg";
 import { Count } from "../Count/Count";
 
@@ -17,7 +18,7 @@ export const ProductPage = () => {
 
   const [count, setCount] = useState(1);
   const [selectedColor, setSelectedColor] = useState("");
-  // const [selectedZize, setSelectedSize] = useState("");
+  const [selectedSize, setSelectedsize] = useState("");
 
   const handleIncrement = () => {
     setCount((prev) => prev + 1);
@@ -31,9 +32,9 @@ export const ProductPage = () => {
   const handleColorChange = (e) => {
     setSelectedColor(e.target.value);
   };
-  // const handleSizeChange = (e) => {
-  //   setSelectedSize(e.target.value);
-  // };
+  const handleSelectedSize = (e) => {
+    setSelectedsize(e.target.value);
+  };
 
   useEffect(() => {
     dispatch(fetchProduct(id)); //создаем запрос к серверу
@@ -63,7 +64,11 @@ export const ProductPage = () => {
             />
           </div>
 
-          {/* <ProductSize size={product.size} /> */}
+          <ProductSize
+            sizeList={product.size}
+            selectedSize={selectedSize}
+            handleSelectedSize={handleSelectedSize}
+          />
           <div className={s.description}>
             <p className={cn(s.subtitle, s.descriptionTitle)}>Описание</p>
             <p className={s.descriptionText}>{product.description}</p>
