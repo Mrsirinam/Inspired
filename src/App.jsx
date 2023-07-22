@@ -15,13 +15,17 @@ import { useEffect } from "react";
 import { fetchNavigation } from "./features/navigationSlice";
 import { fetchColors } from "./features/colorSlice";
 import { ProductPage } from "./components/ProductPage/ProductPage";
+import { FavoritePage } from "./components/FavoritePage/FavoritePage";
+import { CartPage } from "./components/CartPage/CartPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route index element={<Navigate to="/catalog/women" />} />
-      <Route path="product/:id/" element={<ProductPage />} />
-      <Route path="catalog/:gender/:category?" element={<MainPage />} />
+      <Route path="/favorite" element={<FavoritePage />} />
+      <Route path="/cart" element={<CartPage />} />
+      <Route path="/product/:id/" element={<ProductPage />} />
+      <Route path="/catalog/:gender/:category?" element={<MainPage />} />
       <Route path="*" element={<ErrorPage />} />
     </Route>
   )

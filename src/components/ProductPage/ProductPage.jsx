@@ -8,10 +8,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { API_URL } from "../../const";
 import { ColorList } from "../ColorList/ColorList.jsx";
 import { ProductSize } from "../ProductSize/ProductSize";
-import { ReactComponent as Like } from "../../assets/heart.svg";
 import { Count } from "../Count/Count";
 import { Goods } from "../Goods/Goods";
 import { fetchCategory } from "../../features/goodsSlice";
+import { BtnLike } from "../BtnLike/BtnLike";
 
 export const ProductPage = () => {
   const dispatch = useDispatch();
@@ -100,7 +100,7 @@ export const ProductPage = () => {
                 aria-label="Добавить в избранное"
                 type="button"
               >
-                <Like />
+                <BtnLike />
               </button>
             </div>
           </form>
