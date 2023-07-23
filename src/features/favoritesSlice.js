@@ -1,15 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = localStorage.getItem("favorite")
+  ? JSON.parse(localStorage.getItem("favorite"))
+  : [];
+
 //создаем состояние Redux
 const favoritesSlice = createSlice({
   name: "favorites", //  имя этого состояния, которое будет использоваться для доступа к состоянию и его обновления.
-  initialState: [], //начальное состояние в виде пустого массива.
+  initialState,
   reducers: {
     addToFavorites(state, action) {
       const id = action.payload.id;
       if (!state.includes(id)) {
         state.push(id); //проверяем, если товара нет в избранном, добавляем
       }
+      localStorage.setItem("favorite", JSON.stringify(state));
     },
     removeFromFavorites(state, action) {
       const id = action.payload.id;
@@ -17,6 +22,7 @@ const favoritesSlice = createSlice({
       if (index !== -1) {
         state.splice(index, 1); //удаляем, товар из избранного если найден такой id
       }
+      localStorage.setItem("favorite", JSON.stringify(state));
     },
   },
 });

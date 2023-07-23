@@ -100,7 +100,7 @@ export const ProductPage = () => {
                 aria-label="Добавить в избранное"
                 type="button"
               >
-                <BtnLike />
+                <BtnLike id={id} />
               </button>
             </div>
           </form>
