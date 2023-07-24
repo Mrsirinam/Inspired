@@ -1,0 +1,60 @@
+.pagination {
+  margin: 0 auto;
+  width: max-content;
+  display: flex;
+  gap: 16px;
+  padding-top: 40px;
+}
+
+.list {
+  display: flex;
+  gap: 8px;
+  padding-top: 3px;
+  padding-bottom: 6px;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
+}
+
+.link {
+  position: relative;
+  width: 16px;
+  font-size: 14px;
+  line-height: 17px;
+  color: #8a8a8a;
+
+  @media (max-width: 768px) {
+    width: 10px;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 1px;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    background-color: transparent;
+  }
+
+  &Active {
+    color: #000;
+
+    &:after {
+      background-color: #000;
+    }
+  }
+}
+
+.arrow {
+  color: #000;
+
+  &:disabled {
+    pointer-events: none;
+    color: #8a8a8a;
+  }
+}
