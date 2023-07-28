@@ -5,10 +5,12 @@ import { fetchCategory, fetchGender } from "../../features/goodsSlice";
 import { setActiveGender } from "../../features/navigationSlice";
 import { Goods } from "../Goods/Goods";
 import { Banner } from "../Banner/Banner";
+import { usePageFromSearchParams } from "../../hooks/usePageFromSearchParams";
 
 export const MainPage = () => {
-  const dispatch = useDispatch();
   const { gender, category } = useParams();
+  const dispatch = useDispatch();
+  const page = usePageFromSearchParams(dispatch);
 
   const { activeGender, categories, genderList } = useSelector(
     (state) => state.navigation
@@ -27,18 +29,19 @@ export const MainPage = () => {
 
   useEffect(() => {
     if (gender && category) {
-      dispatch(fetchCategory({ gender, category }));
-      return () => {
-        // будет вызываться когда жлемент MainPage демонтируется
-      };
+      const params = { gender, category };
+      if (page) {
+        params.page = page;
+      }
+      dispatch(fetchCategory(params));
+      return;
     }
+
     if (gender) {
       dispatch(fetchGender(gender));
-      return () => {
-        // будет вызываться когда жлемент MainPage демонтируется
-      };
+      return;
     }
-  }, [dispatch, category, gender]);
+  }, [gender, category, page, dispatch]);
 
   return (
     <>
