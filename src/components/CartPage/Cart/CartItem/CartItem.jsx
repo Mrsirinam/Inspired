@@ -18,11 +18,12 @@ export const CartItem = ({ id, color, size, count, goodsList }) => {
     dispatch(removeFromCart({ id, color, size }));
   };
 
+  console.log(API_URL);
   return (
     <article className={s.item}>
       <img
         className={s.image}
-        src={`${API_URL}${item?.pic}`}
+        src={`${API_URL}/${item?.pic}`}
         alt={item?.title}
       />
 
@@ -34,7 +35,6 @@ export const CartItem = ({ id, color, size, count, goodsList }) => {
           <span>{id}</span>
         </div>
       </div>
-
       <div className={s.prop}>
         <div className={s.color}>
           <p className={cn(s.subtitle, s.colorTitle)}>Цвет</p>
@@ -48,17 +48,15 @@ export const CartItem = ({ id, color, size, count, goodsList }) => {
         </div>
 
         <div className={s.size}>
-          <p className={cn(s.subtitle, s.sizeTitle)}>Цвет</p>
+          <p className={cn(s.subtitle, s.sizeTitle)}>Размер</p>
           <div className={s.sizeItem}>{size}</div>
         </div>
       </div>
-
       <button
         className={s.del}
         aria-label="Удалить товар из корзины"
         onClick={handleRemoveItem}
       ></button>
-
       <Count
         className={s.count}
         count={count}

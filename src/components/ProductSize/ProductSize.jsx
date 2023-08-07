@@ -1,28 +1,22 @@
 import s from "./ProductSize.module.scss";
 
-export const ProductSize = ({ sizeList, selectedSize, handleSelectedSize }) => {
-  //console.log(sizeList);
-  return (
-    <div className={s.size}>
-      <p className={s.title}>Размер</p>
-      <div className={s.list}>
-        {sizeList?.map((e, i) => {
-          // {sizeList?.map((e, i) тоже самое, что и sizeList ? sizeList.map, то есть проверка на наличие массива. Если он есть, то перебираем
-          return (
-            <label key={i} className={s.item}>
-              <input
-                className={s.input}
-                type="radio"
-                name="size"
-                value={e}
-                checked={selectedSize ? selectedSize === e : 0}
-                onChange={handleSelectedSize}
-              />
-              <span className={s.check}>{e}</span>
-            </label>
-          );
-        })}
-      </div>
+export const ProductSize = ({ size, selectedSize, handleSizeChange }) => (
+  <div className={s.size}>
+    <p className={s.title}>Размер</p>
+    <div className={s.list}>
+      {size?.map((item) => (
+        <label className={s.item} key={item}>
+          <input
+            className={s.input}
+            type="radio"
+            name="size"
+            value={item}
+            checked={selectedSize === item}
+            onChange={handleSizeChange}
+          />
+          <span className={s.check}>{item}</span>
+        </label>
+      ))}
     </div>
-  );
-};
+  </div>
+);
