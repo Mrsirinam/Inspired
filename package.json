@@ -12,13 +12,18 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "classnames": "^2.3.2",
+    "formik": "^2.4.3",
+    "formix": "^0.0.1",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-number-format": "^5.2.2",
     "react-redux": "^8.1.1",
     "react-router-dom": "^6.14.1",
     "react-use": "^17.4.0",
-    "redux": "^4.2.1"
+    "redux": "^4.2.1",
+    "yap": "^0.0.2",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

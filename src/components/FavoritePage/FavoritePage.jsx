@@ -3,6 +3,7 @@ import { Goods } from "../Goods/Goods";
 import { useEffect } from "react";
 import { fetchCategory } from "../../features/goodsSlice";
 import { usePageFromSearchParams } from "../../hooks/usePageFromSearchParams";
+import s from "./FavoritePage.module.scss";
 
 export const FavoritePage = () => {
   const dispatch = useDispatch();
@@ -21,5 +22,10 @@ export const FavoritePage = () => {
     }
   }, [favorites, page, dispatch]);
 
-  return <Goods title="Избранное" />;
+  return favorites.length ? (
+    <Goods title="Избранное" />
+  ) : (
+    <h3 className={s.empty}>Вы ничего не добавили в избранное </h3>
+  );
 };
+//если в избранном нет товаров, тогда появляется надпись. Если есть - тогда отображаются избранные товары

@@ -12,7 +12,7 @@ export const Goods = ({ title }) => {
       <Container>
         <h2 className={s.title}>
           {title ?? "Новинки"}
-          {totalCount && <sup>&nbsp;({totalCount})</sup>}
+          {totalCount && totalCount > 0 ? <sup>&nbsp;({totalCount})</sup> : ""}
         </h2>
         <ul className={s.list}>
           {goodsList.map((item) => (
