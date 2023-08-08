@@ -1,0 +1,97 @@
+.search {
+  margin-bottom: 20px;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 24px;
+  }
+}
+.form {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  width: 100%;
+  height: 62px;
+  padding-bottom: 16px;
+
+  @media (max-width: 768px) {
+    height: 36px;
+  }
+}
+
+.input {
+  flex-grow: 1;
+  height: 100%;
+  border: 1px solid #8a8a8a;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0 24px;
+
+  @supports not selector(:focus-visble) {
+    &:focus {
+      border: 1px solid #000000;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border: 1px solid #000000;
+  }
+
+  &::placeholder {
+    opacity: 0.4;
+  }
+
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 10px;
+    line-height: 12px;
+    padding: 0 16px;
+  }
+}
+
+.btn {
+  flex-basis: 141px;
+  height: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  transition: background-color 0.15s ease-in-out;
+
+  &:hover {
+    background-color: #8a8a8a;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+
+  @media (max-width: 768px) {
+    flex-basis: 124px;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  @media (max-width: 540px) {
+    flex-basis: 100px;
+  }
+}
+
+.error {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+  color: #ff0000;
+}
