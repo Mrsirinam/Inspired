@@ -33,7 +33,8 @@ export const Order = ({ cartItems }) => {
         <h2 className={s.title}>Оформление заказа</h2>
         <Formik
           initialValues={{
-            fio: Yup.string().required("Заполните ФИО"),
+            fio: "",
+            // fio: Yup.string().required("Заполните ФИО"),
             address: "",
             phone: "",
             email: "",
@@ -67,7 +68,7 @@ export const Order = ({ cartItems }) => {
                 />
                 <ErrorMessage
                   className={s.error}
-                  name="fio"
+                  name="address"
                   component={"span"}
                 />
               </label>
