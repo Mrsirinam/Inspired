@@ -1,0 +1,112 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.body {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  padding: 40px 24px;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.customer {
+  margin-bottom: 24px;
+}
+
+.goods {
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.total {
+  margin-left: auto;
+  max-width: 145px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.close {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  background: url("../close.svg") center no-repeat;
+  width: 24px;
+  height: 24px;
+  
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.customerItem {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  border-bottom: 0.5px solid #dcdcdc;
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.customerTitle {
+  font-size: 14px;
+  line-height: 17px;
+  color: #8a8a8a;
+}
+
+.customerData {
+  font-size: 14px;
+  line-height: 17px;
+  margin-left: auto;
+}
+
+.goodsItem {
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.goodsImg {
+  display: block;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-bottom: 4px;
+}
+
+.goodsCount {
+  font-size: 12px;
+  line-height: 15px;
+}

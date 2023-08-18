@@ -1,11 +1,17 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Container } from "../../Layout/Container/Container.jsx";
 import s from "./Order.module.scss";
-import * as Yup from "yup";
 import { PatternFormat } from "react-number-format";
+import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { sendOrder } from "../../../features/cartSlice.js";
 
 export const Order = ({ cartItems }) => {
-  const handleSubmitOrder = (values) => {};
+  const dispatch = useDispatch();
+  const handleSubmitOrder = (values) => {
+    dispatch(sendOrder({ order: cartItems, values }));
+  };
+
   const validationSchema = Yup.object({
     fio: Yup.string().required("Заполните ФИО"),
     address: Yup.string().test(
@@ -31,14 +37,14 @@ export const Order = ({ cartItems }) => {
     <section>
       <Container>
         <h2 className={s.title}>Оформление заказа</h2>
+
         <Formik
           initialValues={{
             fio: "",
-            // fio: Yup.string().required("Заполните ФИО"),
             address: "",
             phone: "",
             email: "",
-            delivery: "self",
+            delivery: "",
           }}
           onSubmit={handleSubmitOrder}
           validationSchema={validationSchema}
@@ -77,7 +83,7 @@ export const Order = ({ cartItems }) => {
                 <Field
                   as={PatternFormat}
                   className={s.input}
-                  format="+7(###)###-##-##"
+                  format="+7(###)-###-####"
                   mask="_"
                   placeholder="Телефон*"
                   name="phone"
@@ -105,7 +111,7 @@ export const Order = ({ cartItems }) => {
             </fieldset>
 
             <fieldset className={s.radioList}>
-              <label className={s.radio}>
+              <label className={s.radoi}>
                 <Field
                   className={s.radioInput}
                   type="radio"
@@ -114,8 +120,7 @@ export const Order = ({ cartItems }) => {
                 />
                 <span>Доставка</span>
               </label>
-
-              <label className={s.radio}>
+              <label className={s.radoi}>
                 <Field
                   className={s.radioInput}
                   type="radio"
@@ -130,6 +135,7 @@ export const Order = ({ cartItems }) => {
                 component={"span"}
               />
             </fieldset>
+
             <button className={s.submit} type="submit">
               Оформить
             </button>

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const statusServerSlice = createSlice({
   name: "statusServer",
   initialState: {
-    status: false,
+    status: true,
   },
   reducers: {
     setStatusServer(state, action) {
