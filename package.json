@@ -1,5 +1,5 @@
 {
-  "name": "inspired",
+  "name": "inspired-react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,30 +11,27 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
-    "classnames": "^2.3.2",
-    "formik": "^2.4.3",
-    "formix": "^0.0.1",
+    "formik": "^2.4.2",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loader-spinner": "^5.3.4",
     "react-number-format": "^5.2.2",
     "react-redux": "^8.1.1",
-    "react-router-dom": "^6.14.1",
+    "react-router-dom": "^6.14.0",
     "react-use": "^17.4.0",
-    "redux": "^4.2.1",
-    "yap": "^0.0.2",
     "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
+    "classnames": "^2.3.2",
     "eslint": "^8.38.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
-    "sass": "^1.63.6",
+    "sass": "^1.63.5",
     "vite": "^4.3.9",
     "vite-plugin-svgr": "^3.2.0"
   }
