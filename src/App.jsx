@@ -16,6 +16,7 @@ import { fetchNavigation } from "./features/navigationSlice";
 import { fetchColors } from "./features/colorSlice";
 import { ProductPage } from "./components/ProductPage/ProductPage";
 import { FavoritePage } from "./components/FavoritePage/FavoritePage";
+import { SearchPage } from "./components/SearchPage/SearchPage";
 import { CartPage } from "./components/CartPage/CartPage";
 
 const router = createBrowserRouter(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
       <Route index element={<Navigate to="/catalog/women" />} />
       <Route path="/favorite" element={<FavoritePage />} />
       <Route path="/cart" element={<CartPage />} />
+      <Route path="/search" element={<SearchPage />} />
       <Route path="/product/:id/" element={<ProductPage />} />
       <Route path="/catalog/:gender/:category?" element={<MainPage />} />
       <Route path="*" element={<ErrorPage />} />
